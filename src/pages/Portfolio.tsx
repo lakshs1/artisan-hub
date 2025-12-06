@@ -1,60 +1,8 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
-import artwork1 from "@/assets/artwork-1.jpg";
-import artwork2 from "@/assets/artwork-2.jpg";
-import artwork3 from "@/assets/artwork-3.jpg";
-import artwork4 from "@/assets/artwork-4.jpg";
-
-const artworks = [
-  {
-    id: 1,
-    title: "Golden Reverie",
-    category: "Painting",
-    medium: "Oil on Canvas",
-    dimensions: "36\" x 48\"",
-    year: 2024,
-    image: artwork1,
-    status: "available",
-    price: 2800,
-  },
-  {
-    id: 2,
-    title: "Emergence",
-    category: "Abstract",
-    medium: "Acrylic on Canvas",
-    dimensions: "24\" x 30\"",
-    year: 2024,
-    image: artwork2,
-    status: "available",
-    price: 1800,
-  },
-  {
-    id: 3,
-    title: "Still Life with Flowers",
-    category: "Classical",
-    medium: "Oil on Canvas",
-    dimensions: "48\" x 32\"",
-    year: 2023,
-    image: artwork3,
-    status: "sold",
-    price: 3500,
-  },
-  {
-    id: 4,
-    title: "Woven Dreams",
-    category: "Textile",
-    medium: "Mixed Fiber Art",
-    dimensions: "24\" x 24\"",
-    year: 2024,
-    image: artwork4,
-    status: "available",
-    price: 1200,
-  },
-];
-
-const categories = ["All", "Painting", "Abstract", "Classical", "Textile"];
-
-import { useState } from "react";
+import { artworks, categories } from "@/data/artworks";
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -106,9 +54,10 @@ const Portfolio = () => {
           <div className="container-wide">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredArtworks.map((artwork, index) => (
-                <article
+                <Link
+                  to={`/artwork/${artwork.id}`}
                   key={artwork.id}
-                  className="artwork-card group"
+                  className="artwork-card group block"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="relative aspect-[4/5] overflow-hidden">
@@ -131,9 +80,7 @@ const Portfolio = () => {
                     <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
                       <p className="text-cream/70 text-sm mb-1">{artwork.medium}</p>
                       <p className="text-cream/70 text-sm mb-2">{artwork.dimensions}</p>
-                      {artwork.status === "available" && (
-                        <p className="text-ochre font-display text-xl">${artwork.price.toLocaleString()}</p>
-                      )}
+                      <p className="text-ochre font-display text-lg">View Details →</p>
                     </div>
                   </div>
                   <div className="p-6">
@@ -142,7 +89,7 @@ const Portfolio = () => {
                     </p>
                     <h3 className="font-display text-2xl text-foreground">{artwork.title}</h3>
                   </div>
-                </article>
+                </Link>
               ))}
             </div>
           </div>
