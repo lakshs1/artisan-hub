@@ -2,6 +2,7 @@ import artwork1 from "@/assets/artwork-1.jpg";
 import artwork2 from "@/assets/artwork-2.jpg";
 import artwork3 from "@/assets/artwork-3.jpg";
 import artwork4 from "@/assets/artwork-4.jpg";
+import artwork5 from "@/assets/artwork-5.jpg";
 
 export interface Artwork {
   id: number;
@@ -65,6 +66,19 @@ export const artworks: Artwork[] = [
     dimensions: "24\" x 24\"",
     year: 2024,
     image: artwork4,
+    status: "available",
+    timeTaken: "5 weeks",
+    inspiration: "Drawing from childhood memories of my grandmother's handloom, blending traditional techniques with modern abstract expression.",
+    materialsUsed: ["Merino Wool", "Silk Threads", "Cotton Warp", "Hand-dyed Fibers", "Wooden Frame Loom"],
+  },
+  {
+    id: 5,
+    title: "",
+    category: "",
+    medium: "",
+    dimensions: "24\" x 24\"",
+    year: 2024,
+    image: artwork5,
     status: "available",
     timeTaken: "5 weeks",
     inspiration: "Drawing from childhood memories of my grandmother's handloom, blending traditional techniques with modern abstract expression.",

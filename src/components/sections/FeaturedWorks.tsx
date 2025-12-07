@@ -6,6 +6,7 @@ import artwork2 from "@/assets/artwork-2.jpg";
 import artwork3 from "@/assets/artwork-3.jpg";
 import artwork4 from "@/assets/artwork-4.jpg";
 
+
 const featuredArtworks = [
   {
     id: 1,
@@ -17,7 +18,7 @@ const featuredArtworks = [
   },
   {
     id: 2,
-    title: "Emergence",
+    title: "Holding the Dawn",
     category: "Abstract",
     year: 2024,
     image: artwork2,
