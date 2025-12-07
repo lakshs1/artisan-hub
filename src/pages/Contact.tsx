@@ -15,30 +15,60 @@ const Contact = () => {
     requestType: "general",
     budget: "",
     message: "",
+    number: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+  try {
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      type: formData.requestType, 
+      budget: formData.budget,
+      number:formData.number,      // optional
+      message: formData.message,
+    };
 
+    const res = await fetch("https://artisan-hub-vodz.onrender.com/api/enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await res.json();
+
+    if (data.success) {
+      toast({
+        title: "Thank you for your interest!",
+        description: "We received your enquiry and will get back soon.",
+        duration: 5000,
+      });
+
+      // Clear form + close modal
+      
+    } else {
+      toast({
+        title: "Something went wrong!",
+        description: "Please try again later.",
+        duration: 5000,
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
     toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. I'll get back to you within 48 hours.",
+      title: "Network Error!",
+      description: "Backend is unreachable.",
+      duration: 5000,
+      variant: "destructive",
     });
+  }
 
-    setFormData({
-      name: "",
-      email: "",
-      requestType: "general",
-      budget: "",
-      message: "",
-    });
-    setIsSubmitting(false);
-  };
+  setIsSubmitting(false);
+};
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -83,7 +113,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        placeholder="John Doe"
+                        placeholder="rupanzel"
                         className="h-12"
                       />
                     </div>
@@ -96,7 +126,19 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        placeholder="john@example.com"
+                        placeholder="flyrider@rupanzel.com"
+                        className="h-12"
+                      />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="number">Your number *</Label>
+                      <Input
+                        id="number"
+                        name="number"
+                        value={formData.number}
+                        onChange={handleChange}
+                        required
+                        placeholder="contact number with CountryCode"
                         className="h-12"
                       />
                     </div>
@@ -175,8 +217,8 @@ const Contact = () => {
                     </div>
                     <div>
                       <p className="font-medium text-foreground">Email</p>
-                      <a href="mailto:artist@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                        artist@example.com
+                      <a href="mailto:mimanshashakya@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                        mimanshashakya@gmail.com
                       </a>
                     </div>
                   </div>
@@ -188,7 +230,7 @@ const Contact = () => {
                     <div>
                       <p className="font-medium text-foreground">Studio Location</p>
                       <p className="text-muted-foreground">
-                        Brooklyn, New York<br />
+                        Delhi, new delhi<br />
                         By appointment only
                       </p>
                     </div>
@@ -212,21 +254,14 @@ const Contact = () => {
                   <h3 className="font-display text-lg text-foreground mb-4">Follow My Journey</h3>
                   <div className="flex items-center gap-4">
                     <a
-                      href="https://instagram.com"
+                      href="https://www.instagram.com/stubborn.brush/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
                     >
                       <Instagram className="w-5 h-5" />
                     </a>
-                    <a
-                      href="https://twitter.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-12 h-12 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary transition-all duration-300"
-                    >
-                      <Twitter className="w-5 h-5" />
-                    </a>
+                    
                   </div>
                 </div>
 

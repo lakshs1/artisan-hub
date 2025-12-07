@@ -9,9 +9,8 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:artist@example.com", label: "Email" },
+  { icon: Instagram, href: "https://www.instagram.com/stubborn.brush/", label: "Instagram" },
+  { icon: Mail, href: "mailto:mimanshashakya@gmail.com", label: "Email" },
 ];
 
 export function Footer() {
@@ -27,7 +26,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link to="/" className="flex items-center gap-2 font-display text-2xl font-semibold">
               <Palette className="w-6 h-6 text-ochre" />
-              <span>Portfolio</span>
+              <span>Mimansha Shakya</span>
             </Link>
             <p className="text-cream/70 max-w-sm">
               A curated collection of visual explorations, creative expressions, and artistic journeys.
@@ -71,7 +70,7 @@ export function Footer() {
               For commissions and inquiries:
               <br />
               <a href="mailto:artist@example.com" className="text-ochre hover:underline">
-                artist@example.com
+                mimanshashakya@gmail.com
               </a>
             </p>
           </div>
@@ -80,7 +79,7 @@ export function Footer() {
         {/* Bottom */}
         <div className="mt-16 pt-8 border-t border-cream/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-cream/50 text-sm">
-            © {new Date().getFullYear()} Anisha Chowdhury. All rights reserved.
+            © {new Date().getFullYear()} mimansha shakya. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}

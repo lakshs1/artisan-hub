@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/artwork-4.jpg";
 
 export function HeroSection() {
   const scrollToContent = () => {
@@ -31,7 +31,7 @@ export function HeroSection() {
 
         {/* Title */}
         <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-cream mb-4 animate-fade-in-up">
-          Art <span className="italic font-normal">Portfolio</span>
+          Mimansha<span className="italic font-normal">Shakya</span>
         </h1>
 
         {/* Year */}

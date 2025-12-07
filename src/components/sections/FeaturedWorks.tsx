@@ -66,14 +66,14 @@ export function FeaturedWorks() {
           {featuredArtworks.map((artwork, index) => (
             <Link
               key={artwork.id}
-              to={`/portfolio/${artwork.id}`}
+              to={`/portfolio`}
               className={`artwork-card group ${
                 artwork.size === "large" ? "md:col-span-2 lg:col-span-1 lg:row-span-2" :
                 artwork.size === "wide" ? "lg:col-span-2" : ""
               }`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative overflow-hidden aspect-[4/5]">
+              <div className="relative overflow-hidden w-full h-full">
                 <img
                   src={artwork.image}
                   alt={artwork.title}

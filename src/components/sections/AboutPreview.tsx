@@ -25,11 +25,11 @@ export function AboutPreview() {
           <div className="animate-slide-in-right">
             <p className="text-primary uppercase tracking-widest text-sm mb-4">About the Artist</p>
             <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-              Anisha <span className="italic">Chowdhury</span>
+              Mimansha <span className="italic">Shakya</span>
             </h2>
             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed mb-8">
               <p>
-                With over a decade of experience spanning textile design, oil painting, 
+                With over a decade of experience spanning oil painting, 
                 and contemporary abstract works, I create pieces that explore the 
                 intersection of tradition and modernity.
               </p>

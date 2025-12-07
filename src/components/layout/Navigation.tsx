@@ -7,14 +7,13 @@ const navLinks = [
   { href: "/", label: "Home" },
   { href: "/portfolio", label: "Portfolio" },
   { href: "/about", label: "About" },
-  { href: "/testimonials", label: "Testimonials" },
+  // { href: "/testimonials", label: "Testimonials" },
   { href: "/contact", label: "Contact" },
 ];
 
 const socialLinks = [
-  { icon: Instagram, href: "https://instagram.com", label: "Instagram" },
-  { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-  { icon: Mail, href: "mailto:artist@example.com", label: "Email" },
+  { icon: Instagram, href: "https://www.instagram.com/stubborn.brush/", label: "Instagram" },
+  { icon: Mail, href: "mailto:mimanshashakya@gmail.com", label: "Email" },
 ];
 
 interface NavigationProps {
@@ -43,7 +42,7 @@ export function Navigation({ transparent = false }: NavigationProps) {
             )}
           >
             <Palette className="w-6 h-6" />
-            <span>Portfolio</span>
+            <span>Mimansha Shakya</span>
           </Link>
 
           {/* Desktop Navigation */}

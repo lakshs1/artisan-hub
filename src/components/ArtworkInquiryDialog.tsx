@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Artwork } from "@/data/artworks";
+import { title } from "process";
 
 interface ArtworkInquiryDialogProps {
   artwork: Artwork;
@@ -32,25 +33,62 @@ export const ArtworkInquiryDialog = ({
     name: "",
     email: "",
     message: "",
+    number: ""
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate API call - will be replaced with actual Supabase integration
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+  try {
+    const payload = {
+      name: formData.name,
+      email: formData.email,
+      type: type, 
+      artworktitle: artwork.title,
+      number: formData.number,
+      budget: "",      // optional
+      message: formData.message,
+    };
 
-    toast({
-      title: "Thank you for your interest!",
-      description: "Our manager will contact you soon regarding this artwork.",
-      duration: 5000,
+    const res = await fetch("https://artisan-hub-vodz.onrender.com/api/enquiry", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
 
-    setIsSubmitting(false);
-    setFormData({ name: "", email: "", message: "" });
-    onOpenChange(false);
-  };
+    const data = await res.json();
+
+    if (data.success) {
+      toast({
+        title: "Thank you for your interest!",
+        description: "We received your enquiry and will get back soon.",
+        duration: 5000,
+      });
+
+      // Clear form + close modal
+      setFormData({ name: "", email: "", message: "", number:"" });
+      onOpenChange(false);
+    } else {
+      toast({
+        title: "Something went wrong!",
+        description: "Please try again later.",
+        duration: 5000,
+        variant: "destructive",
+      });
+    }
+  } catch (error) {
+    toast({
+      title: "Network Error!",
+      description: "Backend is unreachable.",
+      duration: 5000,
+      variant: "destructive",
+    });
+  }
+
+  setIsSubmitting(false);
+};
+
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -79,6 +117,21 @@ export const ArtworkInquiryDialog = ({
                 setFormData({ ...formData, name: e.target.value })
               }
               placeholder="Enter your name"
+              className="bg-background border-border"
+            />
+          </div>
+          <div className="space-y-2">
+            <Label htmlFor="name" className="text-foreground">
+              contact number 
+            </Label>
+            <Input
+              id="number"
+              required
+              value={formData.number}
+              onChange={(e) =>
+                setFormData({ ...formData, number: e.target.value })
+              }
+              placeholder="contact number with country code (optional)"
               className="bg-background border-border"
             />
           </div>

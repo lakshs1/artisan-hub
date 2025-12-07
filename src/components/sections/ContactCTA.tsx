@@ -25,13 +25,13 @@ export function ContactCTA() {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-          <a href="mailto:artist@example.com">
+          <a href="mailto:mimanshashakya@gmail.com">
             <Button
               variant="ghost"
               size="xl"
               className="text-cream hover:bg-cream/10"
             >
-              artist@example.com
+              mimanshashakya@gmail.com
             </Button>
           </a>
         </div>

@@ -30,11 +30,10 @@ const About = () => {
               <div className="animate-slide-in-right order-1 lg:order-2">
                 <p className="text-primary uppercase tracking-widest text-sm mb-4">About the Artist</p>
                 <h1 className="font-display text-5xl md:text-6xl text-foreground mb-6">
-                  Anisha <span className="italic">Chowdhury</span>
+                  Mimansha <span className="italic">Shakya</span>
                 </h1>
                 <p className="text-muted-foreground text-lg leading-relaxed">
-                  Contemporary artist specializing in oil painting, textile design, and mixed media works. 
-                  Based in New York, creating art that bridges tradition and modernity.
+                  Contemporary artist specialized in acrylic painting, realistic and traditional style. I love to draw details and light reflections. Based in India, bridging emotions on canvas to experience moments of bliss through it.
                 </p>
               </div>
             </div>
@@ -49,20 +48,21 @@ const About = () => {
             </h2>
             <div className="prose prose-lg max-w-none text-muted-foreground space-y-6">
               <p>
-                My journey into art began in the colorful streets of Kolkata, where I was surrounded 
-                by the rich textile traditions and vibrant visual culture of Bengal. These early 
+                My journey into art began in the colorful streets of Delhi, where I was surrounded 
+                by the rich Artistic traditions and vibrant visual culture of India. These early 
                 experiences shaped my understanding of color, pattern, and the emotional power of 
                 visual expression.
               </p>
               <p>
-                After completing my formal education in Fine Arts at the Rhode Island School of Design, 
-                I spent years exploring different mediums — from traditional oil painting to experimental 
-                textile work. This cross-disciplinary approach has become the hallmark of my practice.
+                After completing my formal education in Fine Arts at the college of arts - Delhi University, 
+                I spent years exploring different mediums — from acrylic painting to experimental 
+                water color work. This cross-disciplinary approach has become the hallmark of my practice.
               </p>
               <p>
-                Today, my work is held in private collections across North America, Europe, and Asia. 
-                I've exhibited in galleries from New York to Mumbai, and my pieces have been featured 
-                in publications including Art Forum, Elle Decor, and Architectural Digest.
+                Today, my work is held in private collections across North Inida, Europe, and Asia. 
+                I've exhibited in galleries from New delhi to Mumbai.
+                <br />
+                been on many compititions and got positions many times.
               </p>
             </div>
           </div>
@@ -115,22 +115,22 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  year: "2024",
-                  title: "Solo Exhibition",
-                  venue: "Chelsea Gallery, New York",
-                  description: "A retrospective of textile-inspired paintings",
+                  year: "2023",
+                  title: "inter state art competition",
+                  venue: "bharat mandapam, new delhi",
+                  description: "a inter state art competion suppose to happen in 2023",
                 },
                 {
-                  year: "2023",
-                  title: "Group Show",
-                  venue: "Art Basel Miami",
+                  year: "2025",
+                  title: "traditional art empowerment competition",
+                  venue: " India gate, New-Delhi",
                   description: "Featured in the Emerging Artists pavilion",
                 },
                 {
                   year: "2022",
-                  title: "Artist Residency",
-                  venue: "MacDowell Fellowship",
-                  description: "Three-month residency developing new body of work",
+                  title: "state competition winner",
+                  venue: ", Delhi",
+                  description: "inter district art competition winner 2022",
                 },
               ].map((item, index) => (
                 <div

@@ -33,7 +33,7 @@ export const artworks: Artwork[] = [
   },
   {
     id: 2,
-    title: "Emergence",
+    title: "Holding the Dawn",
     category: "Abstract",
     medium: "Acrylic on Canvas",
     dimensions: "24\" x 30\"",
@@ -41,7 +41,7 @@ export const artworks: Artwork[] = [
     image: artwork2,
     status: "available",
     timeTaken: "2 weeks",
-    inspiration: "A meditation on growth and transformation, exploring the moment when something new breaks through the surface.",
+    inspiration: "A young women holding a lotus of light in the dawn. The light from the lotus is making her face, traditional attire and jewellery glow golden giving this painting a serene effect. The cool background and warm focal point creates a peaceful and divine contrast. Her expression is tender, calm and pure making the eyes of the viewer feel as the light is not only being hold in her but within her soul. This painting celebrates the feminine divinity, beauty and grace.",
     materialsUsed: ["Golden Heavy Body Acrylics", "Cotton Canvas", "Palette Knives", "Glazing Medium"],
   },
   {
@@ -60,7 +60,7 @@ export const artworks: Artwork[] = [
   {
     id: 4,
     title: "Woven Dreams",
-    category: "Textile",
+    category: "Oil Paintings",
     medium: "Mixed Fiber Art",
     dimensions: "24\" x 24\"",
     year: 2024,
@@ -72,7 +72,7 @@ export const artworks: Artwork[] = [
   },
 ];
 
-export const categories = ["All", "Painting", "Abstract", "Classical", "Textile"];
+export const categories = ["All", "Painting", "Abstract", "Classical", "Oil Paintings"];
 
 export const getArtworkById = (id: number): Artwork | undefined => {
   return artworks.find(artwork => artwork.id === id);
